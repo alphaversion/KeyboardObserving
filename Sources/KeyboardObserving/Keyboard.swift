@@ -83,7 +83,7 @@ extension Keyboard {
       var height: CGFloat = 0
       if let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
         // If the rectangle is at the bottom of the screen, set the height to 0.
-        if keyboardFrame.origin.y == screen.bounds.height {
+        if keyboardFrame.origin.y == screen.bounds.height || keyboardFrame.width < screen.bounds.width {
           height = 0
         } else {
           height = keyboardFrame.height
